@@ -1,24 +1,12 @@
-# Write your code below this line 👇
-# print("Hello world!")
-book_inventory={"Abc":{"Author":"Azra","Quantity":4},
-                "BCD":{"Author":"Mutakeen","Quantity":6},
-                "EFG":{"Author":"Abrar","Quantity":9}
-                }
-def display():
-    print("current inventory")
-    for book,details in book_inventory.items():
-        print(f"{book}by {details['Author']}:{details['Quantity']}")
-def purchase_book(title):
-    if title in book_inventory:
-        if book_inventory[title]["Quantity"]>0:
-            book_inventory[title]["Quantity"]-=1
-            print(f"you can purchase this")
-    else:
-        print("book is out of stock")
-def main():
-    display()
-    while True:
-        title=input("Enter title")
-        purchase_book(title)
-        display()
-main()
+print("Welcome to the tip calculator!")
+bill = float(input("What was the total bill? $"))
+tip = int(input("What percentage tip would you like to give? 10 12 15 "))
+people = int(input("How many people to split the bill? "))
+tip_as_percent = tip / 100
+total_tip_amount = bill * tip_as_percent
+total_bill = bill + total_tip_amount
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+print(f"Each person should pay: ${final_amount}")
+
+
